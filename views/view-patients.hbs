@@ -1,0 +1,8 @@
+<ul>
+  {{#each patients}}
+  <li class="list-group-item">
+    <a href="/patients/{{this._id}}" class="lead">{{this.firstname}}<br>{{this.lastname}}<br></a>
+    <div class="lead">{{this.dob}}</div>
+  </li>
+  {{/each}}
+</ul>

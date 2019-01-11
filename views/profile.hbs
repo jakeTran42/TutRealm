@@ -1,0 +1,61 @@
+<style media="screen">
+    .form-style-8{
+        font-family: 'Open Sans Condensed', arial, sans;
+        width: 500px;
+        padding: 30px;
+        background: #FFFFFF;
+        margin: 50px auto;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+    }
+    .form-style-8 h2{
+        background: #4D4D4D;
+        text-transform: uppercase;
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: #6cc091;
+        font-size: 18px;
+        font-weight: 100;
+        padding: 20px;
+        margin: -30px -30px 30px -30px;
+    }
+
+
+</style>
+
+<h1 style="text-align: center;"> WELCOME TO YOUR PROFILE</h1>
+
+<div class="form-style-8">
+  <h2> Hello <span style="color: #f44271;">{{cur_user.firstname}} {{cur_user.lastname}}</span></h2>
+
+
+    <div class="type">
+        <h2>You Are a <span style="color: #f44271;">{{cur_user.type}}<span></h2>
+    </div>
+
+    <div class="email">
+        <h2>Your Email <span style="color: #f44271;">{{cur_user.email}}<span></h2>
+    </div>
+
+    <div class="address">
+        <h2>Work Address <span style="color: #f44271;">{{cur_user.address}}<span></h2>
+    </div>
+
+    <div class="phoneNumber">
+        <h2>Contact Num <span style="color: #f44271;">{{cur_user.phoneNumber}}<span></h2>
+    </div>
+
+    <div class="dob">
+        <h2>DOB <span style="color: #f44271;">{{cur_user.dob}}<span></h2>
+    </div>
+
+    <div class="createDate">
+        <h2>This Account was Create On <span style="color: #f44271;">{{cleanDate}}<span></h2>
+    </div>
+
+    <div class="backBtn">
+        <a href="/portals"><h2 style="text-align: center;">| Back |</h2></a>
+    </div>
+
+</div>

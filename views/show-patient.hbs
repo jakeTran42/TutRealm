@@ -1,0 +1,319 @@
+<style media="screen">
+
+  /* Adding medication Form */
+
+  .form-style-8{
+      font-family: 'Open Sans Condensed', arial, sans;
+      width: 500px;
+      padding: 30px;
+      background: #FFFFFF;
+      margin: 50px auto;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+      -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+      -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+  }
+  .form-style-8 h2{
+      background: #4D4D4D;
+      text-transform: uppercase;
+      font-family: 'Open Sans Condensed', sans-serif;
+      color: #6cc091;
+      font-size: 18px;
+      font-weight: 100;
+      padding: 20px;
+      margin: -30px -30px 30px -30px;
+  }
+  .form-style-8 input[type="text"],
+  .form-style-8 input[type="date"],
+  .form-style-8 input[type="datetime"],
+  .form-style-8 input[type="email"],
+  .form-style-8 input[type="number"],
+  .form-style-8 input[type="search"],
+  .form-style-8 input[type="time"],
+  .form-style-8 input[type="url"],
+  .form-style-8 input[type="password"],
+  .form-style-8 input[type="tel"],
+  .form-style-8 textarea,
+  .form-style-8 select
+  {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      display: block;
+      width: 100%;
+      padding: 7px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      background: transparent;
+      margin-bottom: 10px;
+      font: 16px Arial, Helvetica, sans-serif;
+      height: 45px;
+  }
+  .form-style-8 textarea{
+      resize:none;
+      overflow: hidden;
+  }
+  .form-style-8 input[type="button"],
+  .form-style-8 input[type="submit"]{
+      -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+      -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+      box-shadow: inset 0px 1px 0px 0px #45D6D6;
+      background-color: #2CBBBB;
+      border: 1px solid #27A0A0;
+      display: inline-block;
+      cursor: pointer;
+      color: #FFFFFF;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 14px;
+      padding: 8px 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+  }
+  .form-style-8 input[type="button"]:hover,
+  .form-style-8 input[type="submit"]:hover {
+      background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+      background-color:#34CACA;
+  }
+
+  /* EVERYTHING ABOVE THIS LINE CAN BE PUT INTO MAIN STYLESHEET */
+
+  .dosage-quan, .verify-medicine {
+      display: flex;
+      flex-direction: row;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #6cc091;
+    color: white;
+  }
+
+  .modal-body {padding: 2px 16px;}
+
+  /* .modal-body h3 {
+    border-right: 1px solid grey;
+    padding: 10px;
+  } */
+
+  .each-med h3 {
+    border-right: 1px solid grey;
+    padding: 10px;
+  }
+
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #6cc091;
+    color: white;
+  }
+
+  .patient-basic-info {
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    padding: 30px;
+    background: #FFFFFF;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+  }
+
+  .patient-basic-info h2 {
+    background: #4D4D4D;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #6cc091;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+    text-align: center;
+  }
+
+  #medicationBtn {
+    background-color: #6cc091 !important;
+    color: white;
+    border: none;
+  }
+
+</style>
+
+
+<div class="container">
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Previous Medication and Prescription</h2>
+      </div>
+      <div class="modal-body">
+        <div class="separation-content">
+          <div class="each-medication" style="display: flex; flex-direction: column;">
+            {{#each patient.meds}}
+            <div class="each-med" style="display: flex; flex-direction: row; border-bottom: 1px solid grey;">
+              <h3> <span style="color: #f44271">Drug</span> {{this.drugName}}</h3>
+              <h3><span style="color: #f44271">Dosage</span> {{this.dosage}} </h3>
+              <h3><span style="color: #f44271">Prescribed Date</span> {{this.createdAt}}</h3>
+              <h3><span style="color: #f44271">Quantity</span> {{this.quantity}}</h3>
+              <h3><span style="color: #f44271">Prescriber DEA</span> {{this.prescriberDEA}}</h3>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h3>End of List</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="patient-basic-info">
+    <h2><button style="position: relative; width: 20px; height: 20px; border-radius: 50px; right: 180px; font-weight: bold;" onclick="goBack()" type="button" id="backBtn">&lang;</button>{{patient.firstname}} {{patient.lastname}}</h2>
+    <div class="dobAndMedication" style="display: flex; flex-direction: row; align-items: center;">
+      <h3><span style="color: #f44271;">DOB</span> {{patientDOB}}</h3>
+      <button type="button" id="medicationBtn">See All Prescription</button>
+    </div>
+
+  </div>
+
+  <div class="MedForm-show {{currentType}}">
+
+    <style>
+        .form-style-8 {
+            display: none;
+        }
+        .MedForm-show.isPharmacist .form-style-8 {
+            display: block;
+        }
+
+    </style>
+
+      <div class="form-style-8">
+        <h2>Add Medication to <span style="color: #f44271;">{{patient.firstname}} {{patient.lastname}}</span></h2>
+        <form method="POST" action="/patients/{{patient._id}}/medications">
+          <input style="text-transform: capitalize;" required="" type="text" name="drugName" placeholder="What Medication was Prescribed">
+          <div class="dosage-quan">
+              <input required="" type="number" name="dosage" placeholder="Dosage" />
+              <input required="" type="number" name="quantity" placeholder="Quantity" />
+          </div>
+
+          <div class="verify-medicine">
+              <input style="text-transform: capitalize;" required="" type="text" name="prescriber" placeholder="Prescriber" />
+              <input required="" type="number" name="prescriberDEA" placeholder="Doctor's DEA" />
+              <input required="" type="number" name="pharmacyID" placeholder="Pharmacy ID" />
+
+          </div>
+
+          <span>
+
+              <button type="submit" style="border-color: #6cc091; color: #6cc091"> Submit </button>
+              <a class="cancelBtn" href="/" role="button" style="color: red;text-decoration: none; padding: 12px; border: 1px solid red; border-radius: 5px;">Cancel</a>
+
+          </span>
+        </form>
+      </div>
+  </div>
+
+
+
+
+</div>
+
+
+<script>
+  // Get the modal
+  var modal = document.getElementById('myModal');
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("medicationBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  btn.onclick = function() {
+      modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+  function goBack() {
+    window.history.back();
+    }
+
+  function adjust_textarea(h) {
+      h.style.height = "20px";
+      h.style.height = (h.scrollHeight)+"px";
+  }
+</script>
